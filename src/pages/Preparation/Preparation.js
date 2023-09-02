@@ -5,6 +5,8 @@ import hackerRankImg from '../../assets/images/hacker-rank.png'
 import leetCode from '../../assets/images/leet-code.png'
 import interviewWarmup from '../../assets/images/interview-warmup.png'
 import interviewBit from '../../assets/images/interview-bit.png'
+import neetCode from '../../assets/images/neet-code.png'
+import Footer from '../Footer/Footer'
 
 
 
@@ -42,12 +44,12 @@ function Preparation() {
                     <div className="box">
                         <h3 className="title">Popular Quizzes</h3>
                         <div className="flex">
-                            <a href="#"><i className="fab fa-html5"></i><span>HTML</span></a>
-                            <a href="#"><i className="fab fa-css3"></i><span>CSS</span></a>
-                            <a href="#"><i className="fa-brands fa-sass"></i><span>SCSS</span></a>
-                            <a href="#"><i className="fab fa-js"></i><span>Javascript</span></a>
-                            <a href="#"><i className="fab fa-react"></i><span>React</span></a>
-                            <a href="#"><i className="fa-solid fa-database"></i><span>MySQL</span></a>
+                            <Link to="/quizzes/html"><i className="fab fa-html5"></i><span>HTML</span></Link>
+                            <Link to="/quizzes/css"><i className="fab fa-css3"></i><span>CSS</span></Link>
+                            <Link to="/quizzes/scss"><i className="fa-brands fa-sass"></i><span>SCSS</span></Link>
+                            <Link to="/quizzes/javascript"><i className="fab fa-js"></i><span>Javascript</span></Link>
+                            <Link to="/quizzes/react"><i className="fab fa-react"></i><span>React</span></Link>
+                            <Link to="/quizzes/mysql"><i className="fa-solid fa-database"></i><span>MySQL</span></Link>
                         </div>
                     </div>
 
@@ -62,6 +64,17 @@ function Preparation() {
                 <h1 className="heading">recommended resources</h1>
 
                 <div className="box-container">
+                    <div className="box">
+                        <div className="tutor">
+                            <h3>NeetCode</h3>
+                        </div>
+                        <div className="thumb">
+                            <img src={neetCode} alt="" />
+                            <span>Coding Exercises</span>
+                        </div>
+                        <p className="title">Neetcode is a coding interview prep platform with tons of courses to help both beginners and experienced developers learn the coding skills they need to pass technical coding interviews. The platform focuses on coding problems that have the highest chances of coming up in real-life coding job interviews.</p>
+                        <Link to="https://neetcode.io/" className="inline-btn">Take me there</Link>
+                    </div>
 
                     <div className="box">
                         <div className="tutor">
@@ -71,7 +84,7 @@ function Preparation() {
                             <img src={leetCode} alt="" />
                             <span>Coding Exercises</span>
                         </div>
-                        <h3 className="title">complete HTML tutorial</h3>
+                        <p className="title">LeetCode has gained popularity due to its extensive problem library, user-friendly interface, and its role in helping individuals improve their coding and problem-solving skills. It is a valuable resource for both beginners looking to learn programming and experienced professionals aiming to enhance their technical abilities and job prospects.</p>
                         <Link to="https://leetcode.com/" className="inline-btn">Take me there</Link>
                     </div>
 
@@ -83,7 +96,7 @@ function Preparation() {
                             <img src={hackerRankImg} alt="" />
                             <span>Coding Exercises</span>
                         </div>
-                        <h3 className="title">complete HTML tutorial</h3>
+                        <p className="title">HackerRank is widely used by programmers, software engineers, data scientists, and other professionals to enhance their technical skills and demonstrate their expertise to potential employers. It is a versatile platform that offers a variety of resources for individuals at different skill levels, from beginners to experienced coders.</p>
                         <Link to='https://hackerrank.com/' className="inline-btn">Take me there</Link>
                     </div>
 
@@ -95,7 +108,7 @@ function Preparation() {
                             <img src={codeWarsImg} alt="" />
                             <span>Coding Exercises</span>
                         </div>
-                        <h3 className="title">complete HTML tutorial</h3>
+                        <p className="title">CodeWars is known for its engaging and competitive environment, making it an enjoyable platform for programmers of all skill levels to practice and enhance their coding abilities. It's particularly popular among developers who enjoy solving coding puzzles and challenges in a structured and gamified manner.</p>
                         <Link to="https://www.codewars.com/" className="inline-btn">Take me there</Link>
                     </div>
                     <div className="box">
@@ -106,7 +119,7 @@ function Preparation() {
                             <img src={interviewWarmup} alt="" />
                             <span>Coding Exercises</span>
                         </div>
-                        <h3 className="title">complete HTML tutorial</h3>
+                        <p className="title">With Interview Warmup, your answers are transcribed in real time so you can review what you said. You'll also see insights: patterns detected by machine learning that can help you discover things about your answers, like the job-related terms you use and the words you say most often.</p>
                         <Link to="https://grow.google/certificates/interview-warmup/" className="inline-btn">Take me there</Link>
                     </div>
                     <div className="box">
@@ -117,11 +130,12 @@ function Preparation() {
                             <img src={interviewBit} alt="" />
                             <span>Coding Exercises</span>
                         </div>
-                        <h3 className="title">complete HTML tutorial</h3>
+                        <p className="title">InterviewBit is popular among software engineering and tech job aspirants as it provides structured resources and practice material specifically tailored for technical interviews. It aims to help individuals build confidence, improve their problem-solving skills, and increase their chances of success in technical interviews for roles in the tech industry.</p>
                         <Link to="https://www.interviewbit.com/" className="inline-btn">Take me there</Link>
                     </div>
                 </div>
             </section>
+            <Footer />
         </>
     )
 }

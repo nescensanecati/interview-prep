@@ -14,6 +14,8 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Functions from './components/Functions/Functions';
 import Preparation from './pages/Preparation/Preparation';
+import NotFound from './pages/NotFound/NotFound';
+import Quizzes from './pages/Quizzes/Quizzes';
 
 
 function App() {
@@ -23,13 +25,14 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/preparation" element={<Preparation />} />
+          <Route path="/quizzes/:subject" element={<Quizzes />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
-        <Footer />
         <Functions />
       </BrowserRouter>
     </>

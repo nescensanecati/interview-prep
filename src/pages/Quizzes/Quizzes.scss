@@ -1,0 +1,62 @@
+.quizzes .box-container {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, 27.5rem);
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.quizzes .box-container .box {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.quizzes .box-container .box .title {
+  font-size: 2rem;
+  color: var(--black);
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
+
+.quizzes .box-container .box .question {
+  font-size: 1.5rem;
+  color: var(--black);
+  text-transform: capitalize;
+}
+
+.quizzes .box-container .box .flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.quizzes .box-container .flex a {
+  background-color: var(--light-bg);
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+.quizzes .box-container .flex a i {
+  margin-right: 1rem;
+  color: var(--black);
+}
+
+.quizzes .box-container .flex a span {
+  color: var(--light-color);
+}
+
+.quizzes .box-container .flex a:hover {
+  background-color: var(--black);
+}
+
+.quizzes .box-container .flex a:hover span {
+  color: var(--white);
+}
+
+.quizzes .box-container .flex a:hover i {
+  color: var(--white);
+}

@@ -1,12 +1,11 @@
 import './Header.scss'
 import { Link } from 'react-router-dom';
-import guestUserImg from '../../assets/images/user-dark.svg';
 
 
 function Header() {
-    return (
-        <>
-        <header className="header">
+   return (
+      <>
+         <header className="header">
 
             <section className="flex">
 
@@ -25,13 +24,13 @@ function Header() {
                </div>
 
                <div className="profile">
-                  <img src={guestUserImg} className="image" alt="" />
+                  <i className="fa-solid fa-circle-user guest-icon"></i>
                   <h3 className="name">Guest User</h3>
                   <p className="role">Guest</p>
                   <Link to='/' className="btn">view profile</Link>
                   <div className="flex-btn">
-                  <Link to="/login" className="option-btn">login</Link>
-                  <Link to="/signup"  className="option-btn">Register</Link>
+                     <Link to="/login" className="option-btn">login</Link>
+                     <Link to="/signup" className="option-btn">Register</Link>
                   </div>
                </div>
 
@@ -46,7 +45,7 @@ function Header() {
             </div>
 
             <div className="profile">
-               <img src={guestUserImg} className="image" alt="" />
+               <i className="fa-solid fa-circle-user guest-icon"></i>               
                <h3 className="name">Guest User</h3>
                <p className="role">Guest</p>
                <Link to='/login' className="btn">sign in</Link>
@@ -60,8 +59,8 @@ function Header() {
             </nav>
 
          </div>
-         </>
-    )
+      </>
+   )
 }
 
 export default Header;
