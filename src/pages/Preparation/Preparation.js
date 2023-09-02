@@ -38,6 +38,8 @@ function Preparation() {
                             <a href="#"><i className="fa fa-question-circle"></i><span>Behavioral questions</span></a>
                             <a href="#"><i className="fa fa-user-plus"></i><span>Referrals</span></a>
                             <a href="#"><i className="fas fa-smile"></i><span>Learn about the company</span></a>
+                            <a href="#"><i className="fa-solid fa-desktop"></i><span>Get your computer ready</span></a>
+                            <a href="#"><i className="fa-solid fa-camera"></i><span>Test your audio and video</span></a>
                         </div>
                     </div>
 
@@ -130,7 +132,7 @@ function Preparation() {
                             <img src={interviewBit} alt="" />
                             <span>Coding Exercises</span>
                         </div>
-                        <p className="title">InterviewBit is popular among software engineering and tech job aspirants as it provides structured resources and practice material specifically tailored for technical interviews. It aims to help individuals build confidence, improve their problem-solving skills, and increase their chances of success in technical interviews for roles in the tech industry.</p>
+                        <p className="title">InterviewBit is popular among software engineering and tech job aspirants as it provides structured resources and practice material specifically tailored for technical interviews. It aims to help individuals build confidence, improve their problem-solving skills, and increase their success in technical interviews.</p>
                         <Link to="https://www.interviewbit.com/" className="inline-btn">Take me there</Link>
                     </div>
                 </div>

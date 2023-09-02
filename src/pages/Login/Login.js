@@ -19,6 +19,7 @@ function Login() {
 			sessionStorage.setItem('token', response.data.token)
 			navigate('/')
 		})
+        .catch(setError(error))
         
     };
 
