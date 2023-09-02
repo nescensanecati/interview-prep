@@ -336,7 +336,7 @@ section {
 }
 
 .home-grid .box-container {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, 27.5rem);
   gap: 1.5rem;
   justify-content: center;
@@ -347,6 +347,7 @@ section {
   background-color: var(--white);
   border-radius: 0.5rem;
   padding: 2rem;
+  width: 30%;
 }
 
 .home-grid .box-container .box .title {
@@ -357,7 +358,7 @@ section {
 
 .home-grid .box-container .box .flex {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -1281,21 +1282,6 @@ section {
   background-color: var(--light-bg);
   width: 100%;
   margin: 1rem 0;
-}
-
-.footer {
-  background-color: var(--white);
-  border-top: var(--border);
-  text-align: center;
-  font-size: 2rem;
-  padding: 2.5rem 2rem;
-  color: var(--black);
-  margin-top: 1rem;
-  z-index: 1000;
-}
-
-.footer span {
-  color: var(--main-color);
 }
 
 @media (max-width: 1280px) {

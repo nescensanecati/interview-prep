@@ -10,7 +10,7 @@ function Header() {
 
             <section className="flex">
 
-               <a href="/" className="logo">Interview-Prep</a>
+               <Link to='/' className="logo">Interview-Prep</Link>
 
                <form action="search.html" method="post" className="search-form">
                   <input type="text" name="search_box" required placeholder="search courses..." maxLength="100" />
@@ -28,7 +28,7 @@ function Header() {
                   <img src={guestUserImg} className="image" alt="" />
                   <h3 className="name">Guest User</h3>
                   <p className="role">Guest</p>
-                  <a href="profile.html" className="btn">view profile</a>
+                  <Link to='/' className="btn">view profile</Link>
                   <div className="flex-btn">
                   <Link to="/login" className="option-btn">login</Link>
                   <Link to="/signup"  className="option-btn">Register</Link>
@@ -49,15 +49,14 @@ function Header() {
                <img src={guestUserImg} className="image" alt="" />
                <h3 className="name">Guest User</h3>
                <p className="role">Guest</p>
-               <a href="profile.html" className="btn">view profile</a>
+               <Link to='/login' className="btn">sign in</Link>
             </div>
 
             <nav className="navbar">
-               <a href="home.html"><i className="fas fa-home"></i><span>home</span></a>
-               <a href="about.html"><i className="fas fa-question"></i><span>about</span></a>
-               <a href="courses.html"><i className="fas fa-graduation-cap"></i><span>courses</span></a>
-               <a href="teachers.html"><i className="fas fa-chalkboard-user"></i><span>teachers</span></a>
-               <a href="contact.html"><i className="fas fa-headset"></i><span>contact us</span></a>
+               <Link to='/'><i className="fas fa-home"></i><span>home</span></Link>
+               <Link to='/preparation'><i className="fas fa-graduation-cap"></i><span>preparation</span></Link>
+               <Link to='/about'><i className="fas fa-question"></i><span>about</span></Link>
+               <Link to='/contact'><i className="fas fa-headset"></i><span>contact us</span></Link>
             </nav>
 
          </div>
