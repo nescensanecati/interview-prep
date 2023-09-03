@@ -42,7 +42,7 @@ function Quizzes() {
 
 
     useEffect(() => {
-        console.log('here');
+        if (questionId !== undefined){
         axios
             .request({url: `http://localhost:8080/question/` + questionId, timeout: 50})
             .then((response) => {
@@ -51,6 +51,7 @@ function Quizzes() {
             .catch((error) => {
                 console.log(error);
             });
+        }
     }, [questionId]);
 
 
