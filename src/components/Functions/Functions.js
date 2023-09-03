@@ -59,7 +59,7 @@ function Functions() {
             profile.classList.remove('active');
             search.classList.remove('active');
 
-            if (window.innerWidth < 1200) {
+            if (window.innerWidth < 1280) {
                 sideBar.classList.remove('active');
                 body.classList.remove('active');
             }

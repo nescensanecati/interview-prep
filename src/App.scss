@@ -1335,17 +1335,18 @@ section {
 
   .header .flex {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     position: relative;
     padding: 1.5rem 2rem;
   }
 
+  .header .flex a {
+    width: 50%;
+  }
   .header .flex .logo {
-    font-size: 2.5rem;
-    color: var(--black);
-    margin: 1rem;
+    width: 80%;
   }
 
   .header .flex .icons div {
@@ -1361,14 +1362,23 @@ section {
     margin-left: 0.7rem;
   }
   
-
+  .btn{ 
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
   .flex-btn {
-    gap: 0;
-    flex-flow: column;
+    flex-flow: row;
   }
 
   .home-grid .box-container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .home-grid .box-container .box {
+    width: 100%;
   }
 
   .about .row .image img {
