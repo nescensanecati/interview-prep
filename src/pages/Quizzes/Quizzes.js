@@ -7,56 +7,44 @@ import axios from 'axios';
 
 function Quizzes() {
     const { subject } = useParams();
-    const [questionId, setQuestionId] = useState(1);
+    const [questionId, setQuestionId] = useState();
     const [questionInfo, setquestionInfo] = useState([]);
-    const [questionIdArray, setQuestionIdArray] = useState()
     const [questionCounter, setQuestionCounter] = useState(1);
     const [correctResponses, setCorrectResponses] = useState(0);
     let responded = false;
 
-    // function createQuestionIdArray(start) {
-    //     let myArr = ('' + Array(20)).split(',').map(function () { return this[0]++; }, [start]);
-    //     return myArr
-    // }
-
-
-    // useEffect(() => {
-    //     switch (subject) {
-    //         case 'html':
-    //             setQuestionIdArray(createQuestionIdArray(1));
-    //             setQuestionId(1);
-    //             break;
-    //         case 'css':
-    //             setQuestionIdArray(createQuestionIdArray(21));
-    //             setQuestionId(21);
-    //             break;
-    //         case 'scss':
-    //             setQuestionIdArray(createQuestionIdArray(41));
-    //             setQuestionId(41);
-    //             break;
-    //         case 'javascript':
-    //             setQuestionIdArray(createQuestionIdArray(61));
-    //             setQuestionId(61);
-    //             break;
-    //         case 'react':
-    //             setQuestionIdArray(createQuestionIdArray(81));
-    //             setQuestionId(81);
-    //             break;
-    //         case 'mysql':
-    //             setQuestionIdArray(createQuestionIdArray(101));
-    //             setQuestionId(101);
-    //             break;
-    //         default:
-    //             console.log('error');
-    //             setQuestionId(1);
-    //             break;
-    //     }
-    // }, []);
+    useEffect(() => {
+        switch (subject) {
+            case 'html':
+                setQuestionId(1);
+                break;
+            case 'css':
+                setQuestionId(21);
+                break;
+            case 'scss':
+                setQuestionId(41);
+                break;
+            case 'javascript':
+                setQuestionId(61);
+                break;
+            case 'react':
+                setQuestionId(81);
+                break;
+            case 'mysql':
+                setQuestionId(101);
+                break;
+            default:
+                console.log('error');
+                setQuestionId(1);
+                break;
+        }
+    }, []);
 
 
     useEffect(() => {
+        console.log('here');
         axios
-            .get(`http://localhost:8080/question/` + questionId)
+            .request({url: `http://localhost:8080/question/` + questionId, timeout: 50})
             .then((response) => {
                 setquestionInfo(response.data);
             })
