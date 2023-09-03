@@ -28,6 +28,14 @@
   text-align: center;
 }
 
+.quizzes .box-container .box .response {
+  font-size: 1.5rem;
+  color: var(--black);
+  text-transform: capitalize;
+  text-align: left;
+  padding: 2rem 0;
+}
+
 .quizzes .box-container .box .flex {
   display: flex;
   flex-direction: column;
@@ -40,13 +48,29 @@
   background-color: var(--light-bg);
   border-radius: 0.5rem;
   padding: 1rem 1.5rem;
-  font-size: 1.5rem;
+  font-size: 1.5rem; 
+}
+
+#correct{
+  background-color: green;
+  i, span {
+    color: white
+  }
+}
+
+#wrong{
+  background-color: red;
+  i, span {
+    color: white
+  }
 }
 
 .quizzes .box-container .flex button i {
   margin-right: 1rem;
   color: var(--black);
 }
+
+
 
 .quizzes .box-container .flex button span {
   color: var(--light-color);
