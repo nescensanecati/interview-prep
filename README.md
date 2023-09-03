@@ -6,24 +6,24 @@ The principal objective of this project was to put in use all the knowledge obta
 This project is presented to the public, companies, and recruiters attending the Demo Day at Brainstation. 
 
 Technologies and npm packages used (sorted alphabetically):
-    - Axios
-    - bcryptjs
-    - Cors
-    - dotenv
-    - Express
-    - Figma
-    - Heroku
-    - HTML5
-    - Javascript
-    - Jest
-    - jsonwebtoken
-    - Knex
-    - MySQL
-    - Netlify 
-    - Nodemon
-    - React
-    - react-router-dom
-    - SCSS
+- Axios
+- bcryptjs
+- Cors
+- dotenv
+- Express
+- Figma
+- Heroku
+- HTML5
+- Javascript
+- Jest
+- jsonwebtoken
+- Knex
+- MySQL
+- Netlify 
+- Nodemon
+- React
+- react-router-dom
+- SCSS
 
 # Description of the scope
 In today's competitive job market, technical interviews play a pivotal role in determining the success of candidates seeking roles in the technology industry. Technical interviews evaluate a candidate's ability to solve complex problems, apply theoretical knowledge, and showcase their practical skills. However, many individuals face significant challenges during technical interviews, leading to missed opportunities and feelings of inadequacy.
