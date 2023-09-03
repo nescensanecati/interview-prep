@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Interview-Prep Website
+Interview-Prep is a Brainstation final project, the graduation project or capstone.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The principal objective of this project was to put in use all the knowledge obtained through the bootcamp and get to produce the best we could achieve together. 
 
-## Available Scripts
+This project is presented to the public, companies, and recruiters attending the Demo Day at Brainstation. 
 
-In the project directory, you can run:
+Technologies and npm packages used (sorted alphabetically):
+    - Axios
+    - bcryptjs
+    - Cors
+    - dotenv
+    - Express
+    - Figma
+    - Heroku
+    - HTML5
+    - Javascript
+    - Jest
+    - jsonwebtoken
+    - Knex
+    - MySQL
+    - Netlify 
+    - Nodemon
+    - React
+    - react-router-dom
+    - SCSS
 
-### `npm start`
+# Description of the scope
+In today's competitive job market, technical interviews play a pivotal role in determining the success of candidates seeking roles in the technology industry. Technical interviews evaluate a candidate's ability to solve complex problems, apply theoretical knowledge, and showcase their practical skills. However, many individuals face significant challenges during technical interviews, leading to missed opportunities and feelings of inadequacy.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+We propose the development of a comprehensive online platform dedicated to addressing the challenges faced by individuals preparing for technical interviews. This platform will offer an integrated and adaptable learning experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Deploy this site, or test it deployed wich Heroku and Netlify
 
-### `npm test`
+This site is using a backend API that can be checked in the Git repository: 
+https://github.com/nescensanecati/interview-prep
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The API was adapted to be run in production, and it is now running in Heroku, under the domain: 
+https://database-backend-brainstation-70fdd396b787.herokuapp.com/
 
-### `npm run build`
+If you want to see this project deployed and in action, please go to: 
+https://interview-prep.alex-diaz.info/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# How to deploy it locally?
+If you want to run this project locally, there are a few steps that need to be followed. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Step 1: Download the files to your computer.
+You can either: 
+- clone the repository to a local folder that you choose.
+- download the zip file from the repository and unzip it in a folder on your computer.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Step 2: Open the folder in Visual Studio. There a few ways to do this, but this guide might be helpful: https://learn.microsoft.com/en-us/visualstudio/ide/develop-code-in-visual-studio-without-projects-or-solutions?view=vs-2022#open-any-code
 
-### `npm run eject`
+Step 3: Launch a terminal in Visual Studio, and install the 'npm' packages: 
+- This guide to open a terminal in VS Code: https://code.visualstudio.com/docs/terminal/basics
+- once in the folder, you will need to run: 'npm install'
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Step 4: Get the API running before running the project, to get the API running, please follow the steps in the API repository: https://github.com/nescensanecati/interview-prep-api/blob/main/README.md
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Step 5: Run the website (or start it) so you can use it in your prefered browser. To host locally the website, please run in your terminal (the same terminal you were using before, it should be in this project local folder root): 'npm start'. 
