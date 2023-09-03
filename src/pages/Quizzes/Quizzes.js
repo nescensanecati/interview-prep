@@ -56,6 +56,7 @@ function Quizzes() {
 
 
     function handleOnClick() {
+        if (questionCounter !== 20){
         setQuestionId(questionId + 1)
         setQuestionCounter (questionCounter + 1)
         const correctReponse = document.getElementById('correct');
@@ -63,7 +64,11 @@ function Quizzes() {
         const incorrectReponse = document.getElementById('wrong');
         if (incorrectReponse != undefined) { incorrectReponse.setAttribute("id", "other"); };
         const descriptionLocation = document.getElementsByClassName('description');
-        descriptionLocation[0].innerHTML = "";
+        descriptionLocation[0].innerHTML = "";}
+        else {
+            const descriptionLocation = document.getElementsByClassName('description')
+            descriptionLocation[0].innerHTML = `You reached the last response, please click on "Exit" to go back to the preparation page`;
+        }
     }
 
     function handleResponseClick(idFromResponse, index) {
@@ -120,7 +125,7 @@ function Quizzes() {
                                     <Link to="/preparation" className="inline-option-btn">Exit</Link>
                                 </div>
                                 <div className="more-btn">
-                                    <button className="inline-option-btn" onClick={handleOnClick}>next question</button>
+                                    <button className="inline-option-btn next-question" onClick={handleOnClick}>next question</button>
                                 </div>
                             </section>
                         </div>
