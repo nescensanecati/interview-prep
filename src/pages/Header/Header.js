@@ -1,5 +1,6 @@
 import './Header.scss'
 import { Link } from 'react-router-dom';
+import logoImg from '../../assets/images/logo.svg'
 
 
 function Header() {
@@ -9,7 +10,7 @@ function Header() {
 
             <section className="flex">
 
-               <Link to='/' className="logo">Interview-Prep</Link>
+               <Link to='/'><img className="logo" src={logoImg} alt=""/></Link>
 
                <form action="search.html" method="post" className="search-form">
                   <input type="text" name="search_box" required placeholder="search courses..." maxLength="100" />

@@ -156,6 +156,8 @@ section {
 .header .flex .logo {
   font-size: 2.5rem;
   color: var(--black);
+  height: 4rem;
+  margin: 1rem;
 }
 
 .header .flex .search-form {
@@ -1343,7 +1345,7 @@ section {
   .header .flex .logo {
     font-size: 2.5rem;
     color: var(--black);
-    padding-bottom: 2rem;
+    margin: 1rem;
   }
 
   .header .flex .icons div {

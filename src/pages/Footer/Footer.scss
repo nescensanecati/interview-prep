@@ -16,3 +16,9 @@
 .footer span {
   color: var(--main-color);
 }
+
+@media (max-width: 1280px) {
+  .footer {
+    position: relative;
+  }
+}
