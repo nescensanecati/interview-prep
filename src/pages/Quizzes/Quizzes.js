@@ -9,8 +9,48 @@ function Quizzes() {
     const { subject } = useParams();
     const [questionId, setQuestionId] = useState(1);
     const [questionInfo, setquestionInfo] = useState([]);
-
+    const [questionIdArray, setQuestionIdArray] = useState()
     let responded = false;
+
+    // function createQuestionIdArray(start) {
+    //     let myArr = ('' + Array(20)).split(',').map(function () { return this[0]++; }, [start]);
+    //     return myArr
+    // }
+
+
+    // useEffect(() => {
+    //     switch (subject) {
+    //         case 'html':
+    //             setQuestionIdArray(createQuestionIdArray(1));
+    //             setQuestionId(1);
+    //             break;
+    //         case 'css':
+    //             setQuestionIdArray(createQuestionIdArray(21));
+    //             setQuestionId(21);
+    //             break;
+    //         case 'scss':
+    //             setQuestionIdArray(createQuestionIdArray(41));
+    //             setQuestionId(41);
+    //             break;
+    //         case 'javascript':
+    //             setQuestionIdArray(createQuestionIdArray(61));
+    //             setQuestionId(61);
+    //             break;
+    //         case 'react':
+    //             setQuestionIdArray(createQuestionIdArray(81));
+    //             setQuestionId(81);
+    //             break;
+    //         case 'mysql':
+    //             setQuestionIdArray(createQuestionIdArray(101));
+    //             setQuestionId(101);
+    //             break;
+    //         default:
+    //             console.log('error');
+    //             setQuestionId(1);
+    //             break;
+    //     }
+    // }, []);
+
 
     useEffect(() => {
         axios
@@ -25,45 +65,57 @@ function Quizzes() {
 
 
     function handleOnClick() {
+        setQuestionId(questionId + 1)
+        const correctReponse = document.getElementById('correct')
+        if (correctReponse != undefined) { correctReponse.setAttribute("id", "other"); }
+        const incorrectReponse = document.getElementById('wrong')
+        if (incorrectReponse != undefined) { incorrectReponse.setAttribute("id", "other"); }
     }
 
     function handleResponseClick(idFromResponse, index) {
         let responseIsCorrect = false;
         if (responded === false) {
             for (let i = 0; i < questionInfo.length; i++) {
-                if (questionInfo[i].response_id === idFromResponse){
+                if (questionInfo[i].response_id === idFromResponse) {
                     if (questionInfo[i].is_correct) {
-                        const correctReponse = document.getElementsByClassName('button-'+(index+1))
+                        const correctReponse = document.getElementsByClassName('button-' + (index + 1))
                         correctReponse[0].setAttribute("id", "correct");
                         responseIsCorrect = true;
                     }
                 }
             }
-            const descriptionLocation = document.getElementsByClassName ('response')
-            descriptionLocation[0].innerHTML = questionInfo[0].description
+            // const descriptionLocation = document.getElementsByClassName('response')
+            // descriptionLocation[0].innerHTML = questionInfo[0].description
             if (responseIsCorrect === false) {
-                const incorrectReponse = document.getElementsByClassName('button-'+(index+1))
+                const incorrectReponse = document.getElementsByClassName('button-' + (index + 1))
                 incorrectReponse[0].setAttribute("id", "wrong");
             }
             responded = true;
         }
     }
 
-    if (questionInfo.length !== 0) {
+    function RenderH3({item,index}) {
+        if (index === 0)
+        {return (<h3 className='question'>Question: {item.question}</h3>);}
+    }
+
+    if (questionInfo.length !== 0 && questionId.length !== 0) {
         return (
             <>
                 <section className='quizzes'>
                     <div className='box-container'>
                         <div className="box">
                             <h3 className="title">{subject}</h3>
-                            <h3 className='question'>Question 1: What does HTML stand for?</h3>
-                            <div className="flex">
-                                {questionInfo.map((item, index) => {
-                                    return (
-                                        <button className={`button-${index+1}`} key={index} onClick={() => { handleResponseClick(item.response_id, index) }}><i className={`fa-${index+1} fa-solid`}></i><span>{item.response}</span></button>
-                                    )
-                                })}
-                            </div>
+                            {questionInfo.map((item, index) => {
+                                return (
+                                    <div key={index}>
+                                        <RenderH3 item={item} index={index}/>
+                                        <div className="flex">
+                                            <button className={`button-${index + 1}`} onClick={() => { handleResponseClick(item.response_id, index) }}><i className={`fa-${index + 1} fa-solid`}></i><span>{item.response}</span></button>
+                                        </div>
+                                    </div>
+                                )
+                            })}
                             <h3 className='response'></h3>
                             <section className='bottom'>
                                 <div className="more-btn">
@@ -77,6 +129,11 @@ function Quizzes() {
                     </div>
                 </section>
             </>
+        )
+    }
+    else {
+        return (
+            <h3 className='loading'>Loading...</h3>
         )
     }
 }

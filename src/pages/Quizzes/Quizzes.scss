@@ -93,6 +93,14 @@
   justify-content: space-around;
 }
 
+.loading {
+  font-size: 2rem;
+  color: var(--black);
+  text-transform: capitalize;
+  text-align: center;
+  padding: 5rem 0;
+}
+
 @media (max-width: 450px) {
   .quizzes .box-container .box {
     width: 95%;
