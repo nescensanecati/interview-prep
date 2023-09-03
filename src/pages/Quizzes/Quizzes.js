@@ -44,7 +44,7 @@ function Quizzes() {
     useEffect(() => {
         if (questionId !== undefined){
         axios
-            .request({url: `http://localhost:8080/question/` + questionId, timeout: 50})
+            .request({url: `https://database-backend-brainstation-70fdd396b787.herokuapp.com/question/` + questionId})
             .then((response) => {
                 setquestionInfo(response.data);
             })
