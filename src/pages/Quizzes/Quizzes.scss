@@ -36,6 +36,13 @@
   padding: 2rem 0;
 }
 
+.quizzes .box-container .box .description {
+  font-size: 1.5rem;
+  color: var(--black);
+  text-align: left;
+  padding: 2rem 0;
+}
+
 .quizzes .box-container .box .flex {
   display: flex;
   flex-direction: column;
@@ -99,6 +106,19 @@
   text-transform: capitalize;
   text-align: center;
   padding: 5rem 0;
+}
+
+.question-count {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.count-questions, .count-corrects {
+  font-size: 1.5rem;
+  color: var(--black);
+  text-transform: capitalize;
+  text-align: center;
+  padding: 1rem 0;
 }
 
 @media (max-width: 450px) {

@@ -10,6 +10,8 @@ function Quizzes() {
     const [questionId, setQuestionId] = useState(1);
     const [questionInfo, setquestionInfo] = useState([]);
     const [questionIdArray, setQuestionIdArray] = useState()
+    const [questionCounter, setQuestionCounter] = useState(1);
+    const [correctResponses, setCorrectResponses] = useState(0);
     let responded = false;
 
     // function createQuestionIdArray(start) {
@@ -66,10 +68,13 @@ function Quizzes() {
 
     function handleOnClick() {
         setQuestionId(questionId + 1)
-        const correctReponse = document.getElementById('correct')
-        if (correctReponse != undefined) { correctReponse.setAttribute("id", "other"); }
-        const incorrectReponse = document.getElementById('wrong')
-        if (incorrectReponse != undefined) { incorrectReponse.setAttribute("id", "other"); }
+        setQuestionCounter (questionCounter + 1)
+        const correctReponse = document.getElementById('correct');
+        if (correctReponse != undefined) { correctReponse.setAttribute("id", "other"); };
+        const incorrectReponse = document.getElementById('wrong');
+        if (incorrectReponse != undefined) { incorrectReponse.setAttribute("id", "other"); };
+        const descriptionLocation = document.getElementsByClassName('description');
+        descriptionLocation[0].innerHTML = "";
     }
 
     function handleResponseClick(idFromResponse, index) {
@@ -78,14 +83,15 @@ function Quizzes() {
             for (let i = 0; i < questionInfo.length; i++) {
                 if (questionInfo[i].response_id === idFromResponse) {
                     if (questionInfo[i].is_correct) {
+                        setCorrectResponses(correctResponses + 1)
                         const correctReponse = document.getElementsByClassName('button-' + (index + 1))
                         correctReponse[0].setAttribute("id", "correct");
                         responseIsCorrect = true;
                     }
                 }
             }
-            // const descriptionLocation = document.getElementsByClassName('response')
-            // descriptionLocation[0].innerHTML = questionInfo[0].description
+            const descriptionLocation = document.getElementsByClassName('description')
+            descriptionLocation[0].innerHTML = questionInfo[0].description;
             if (responseIsCorrect === false) {
                 const incorrectReponse = document.getElementsByClassName('button-' + (index + 1))
                 incorrectReponse[0].setAttribute("id", "wrong");
@@ -94,9 +100,8 @@ function Quizzes() {
         }
     }
 
-    function RenderH3({item,index}) {
-        if (index === 0)
-        {return (<h3 className='question'>Question: {item.question}</h3>);}
+    function RenderH3({ item, index }) {
+        if (index === 0) { return (<h3 className='question'>Question: {item.question}</h3>); }
     }
 
     if (questionInfo.length !== 0 && questionId.length !== 0) {
@@ -105,18 +110,22 @@ function Quizzes() {
                 <section className='quizzes'>
                     <div className='box-container'>
                         <div className="box">
+                            <div className="question-count">
+                                <h3 className='count-questions'>Question {questionCounter}/20</h3>
+                                <h3 className='count-corrects'>Correct responses: {correctResponses}</h3>
+                            </div>
                             <h3 className="title">{subject}</h3>
                             {questionInfo.map((item, index) => {
                                 return (
                                     <div key={index}>
-                                        <RenderH3 item={item} index={index}/>
+                                        <RenderH3 item={item} index={index} />
                                         <div className="flex">
                                             <button className={`button-${index + 1}`} onClick={() => { handleResponseClick(item.response_id, index) }}><i className={`fa-${index + 1} fa-solid`}></i><span>{item.response}</span></button>
                                         </div>
                                     </div>
                                 )
                             })}
-                            <h3 className='response'></h3>
+                            <h3 className='description'></h3>
                             <section className='bottom'>
                                 <div className="more-btn">
                                     <Link to="/preparation" className="inline-option-btn">Exit</Link>
