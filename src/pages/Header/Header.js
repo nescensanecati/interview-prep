@@ -21,7 +21,7 @@ function Header() {
                   <div id="menu-btn" className="fas fa-bars"></div>
                   <div id="search-btn" className="fas fa-search"></div>
                   <div id="user-btn" className="fas fa-user"></div>
-                  {/* <div id="toggle-btn" className="fas fa-sun"></div> */}
+                  <div id="toggle-btn" className="fas fa-sun"></div>
                </div>
 
                <div className="profile">
