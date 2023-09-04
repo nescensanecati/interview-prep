@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   p {
-    color: white;
+    color: var(--black);
     font-size: 1.5rem;
   }
 }
@@ -53,10 +53,6 @@
     padding: 0.75rem;
     margin-top: 2rem;
   }
-}
-
-.field__label {
-  font-size: 1.5rem;
 }
 
 @media (max-width: 450px) {

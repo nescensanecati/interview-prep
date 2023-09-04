@@ -22,24 +22,24 @@ function Preparation() {
                     <div className="box">
                         <h3 className="title">Where to begin...</h3>
                         <div className="flex">
-                            <a href="#"><i className="fa fa-hourglass-start"></i><span>Start here</span></a>
-                            <a href="#"><i className="fa fa-file"></i><span>Your resume</span></a>
-                            <a href="#"><i className="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a>
-                            <a href="#"><i className="fa-brands fa-github"></i><span>GitHub</span></a>
-                            <a href="#"><i className="fa-solid fa-phone"></i><span>Phone screening</span></a>
-                            <a href="#"><i className="fa-solid fa-question"></i><span>Technical Questions</span></a>
+                            <Link to='/general-content/start-here'><i className="fa fa-hourglass-start"></i><span>Start here</span></Link>
+                            <Link to='/general-content/your-resume'><i className="fa fa-file"></i><span>Your resume</span></Link>
+                            <Link to='/general-content/linkedin'><i className="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></Link>
+                            <Link to='/general-content/github'><i className="fa-brands fa-github"></i><span>GitHub</span></Link>
+                            <Link to='/general-content/phone-screening'><i className="fa-solid fa-phone"></i><span>Phone screening</span></Link>
+                            <Link to='/general-content/technical-questions'><i className="fa-solid fa-question"></i><span>Technical Questions</span></Link>
                         </div>
                     </div>
 
                     <div className="box">
                         <h3 className="title">Other recommendations...</h3>
                         <div className="flex">
-                            <a href="#"><i className="fas fa-smile"></i><span>Stay connected</span></a>
-                            <a href="#"><i className="fa fa-question-circle"></i><span>Behavioral questions</span></a>
-                            <a href="#"><i className="fa fa-user-plus"></i><span>Referrals</span></a>
-                            <a href="#"><i className="fas fa-smile"></i><span>Learn about the company</span></a>
-                            <a href="#"><i className="fa-solid fa-desktop"></i><span>Get your computer ready</span></a>
-                            <a href="#"><i className="fa-solid fa-camera"></i><span>Test your audio and video</span></a>
+                            <Link to='/preparation'><i className="fas fa-smile"></i><span>Stay connected</span></Link>
+                            <Link to='/preparation'><i className="fa fa-question-circle"></i><span>Behavioral questions</span></Link>
+                            <Link to='/preparation'><i className="fa fa-user-plus"></i><span>Referrals</span></Link>
+                            <Link to='/preparation'><i className="fas fa-smile"></i><span>Learn about the company</span></Link>
+                            <Link to='/preparation'><i className="fa-solid fa-desktop"></i><span>Get your computer ready</span></Link>
+                            <Link to='/preparation'><i className="fa-solid fa-camera"></i><span>Test your audio and video</span></Link>
                         </div>
                     </div>
 

@@ -37,7 +37,7 @@ function Login() {
 
                 {error && <div className="login__message">{error}</div>}
             </form>
-            <p>
+            <p className='login__p'>
                 Need an account? <Link to="/signup">Register</Link>
             </p>
         </main>
