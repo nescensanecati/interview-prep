@@ -57,6 +57,7 @@ function Header() {
                <Link to='/preparation'><i className="fas fa-graduation-cap"></i><span>preparation</span></Link>
                <Link to='/about'><i className="fas fa-question"></i><span>about</span></Link>
                <Link to='/contact'><i className="fas fa-headset"></i><span>contact us</span></Link>
+               <Link to='https://www.alex-diaz.info'><i className="fa fa-user-tie"></i><span>Who am I?</span></Link>
             </nav>
 
          </div>
