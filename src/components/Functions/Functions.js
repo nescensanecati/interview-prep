@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 function Functions() {
     function getCookie(cname) {
         let name = cname + "=";
@@ -19,8 +21,7 @@ function Functions() {
         document.cookie = cname + "=" + cvalue;
     }
 
-
-    window.onload = function () {
+    useEffect(() => {
         let toggleBtn = document.getElementById('toggle-btn');
         let body = document.body;
         let darkMode = getCookie('dark-mode');
@@ -117,8 +118,7 @@ function Functions() {
                 search.classList.remove('active');
             }
         }
-
-    }
+     }, []);
 }
 
 export default Functions;

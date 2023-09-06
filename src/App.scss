@@ -1351,8 +1351,13 @@ section {
   }
 
   .header .flex a {
-    width: 50%;
+    width: 40%;
   }
+  
+  .header .flex .option-btn {
+    width: 100%;
+  }
+
   .header .flex .logo {
     width: 80%;
   }
