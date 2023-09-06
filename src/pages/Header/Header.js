@@ -1,16 +1,43 @@
 import './Header.scss'
 import { Link } from 'react-router-dom';
-import logoImg from '../../assets/images/logo.svg'
-
+import logoImgLight from '../../assets/images/logo-light.svg'
+import logoImgDark from '../../assets/images/logo-dark.svg'
 
 function Header() {
+   let logoImg;
+   let darkMode = getCookie('dark-mode');
+
+
+   function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+         let c = ca[i];
+         while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+         }
+         if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+         }
+      }
+      return "disabled";
+   }
+
+
+   if (darkMode === 'enabled') {
+      logoImg = logoImgDark;
+   }
+   else {
+      logoImg = logoImgLight;
+   }
    return (
       <>
          <header className="header">
 
             <section className="flex">
 
-               <Link to='/'><img className="logo" src={logoImg} alt=""/></Link>
+               <Link to='/'><img className="logo" src={logoImg} alt="" /></Link>
 
                <form action="search.html" method="post" className="search-form">
                   <input type="text" name="search_box" required placeholder="search courses..." maxLength="100" />
@@ -46,7 +73,7 @@ function Header() {
             </div>
 
             <div className="profile">
-               <i className="fa-solid fa-circle-user guest-icon"></i>               
+               <i className="fa-solid fa-circle-user guest-icon"></i>
                <h3 className="name">Guest User</h3>
                <p className="role">Guest</p>
                <Link to='/login' className="btn">sign in</Link>

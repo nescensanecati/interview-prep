@@ -1,19 +1,40 @@
 function Functions() {
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "disabled";
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        document.cookie = cname + "=" + cvalue;
+    }
+
+
     window.onload = function () {
         let toggleBtn = document.getElementById('toggle-btn');
         let body = document.body;
-        let darkMode = localStorage.getItem('dark-mode');
+        let darkMode = getCookie('dark-mode');
 
         const enableDarkMode = () => {
             toggleBtn.classList.replace('fa-sun', 'fa-moon');
             body.classList.add('dark');
-            localStorage.setItem('dark-mode', 'enabled');
+            setCookie("dark-mode", "enabled");
         }
 
         const disableDarkMode = () => {
             toggleBtn.classList.replace('fa-moon', 'fa-sun');
             body.classList.remove('dark');
-            localStorage.setItem('dark-mode', 'disabled');
+            setCookie("dark-mode", "disabled");
         }
 
         if (darkMode === 'enabled') {
@@ -21,11 +42,13 @@ function Functions() {
         }
 
         toggleBtn.onclick = (e) => {
-            darkMode = localStorage.getItem('dark-mode');
+            darkMode = getCookie('dark-mode');
             if (darkMode === 'disabled') {
                 enableDarkMode();
+                window.location.reload(false);
             } else {
                 disableDarkMode();
+                window.location.reload(false);
             }
         }
 
@@ -64,6 +87,34 @@ function Functions() {
                 body.classList.remove('active');
             }
         }
+
+        document.body.onclick = (event) => {
+            if (
+                (event.target !== document.querySelector('#user-btn')) &&
+                (profile.classList.contains('active')) 
+            ) {
+                profile.classList.remove('active');
+            }
+            if (
+                (event.target !== document.querySelector('#menu-btn')) &&
+                (sideBar.classList.contains('active'))
+            ) {
+                sideBar.classList.remove('active');
+            }
+            if (
+                (event.target !== document.querySelector('#menu-btn')) &&
+                (sideBar.classList.contains('active'))
+            ) {
+                sideBar.classList.remove('active');
+            }
+            if (
+                (event.target !== document.querySelector('#search-btn')) &&
+                (search.classList.contains('active'))
+            ) {
+                search.classList.remove('active');
+            }
+        }
+
     }
 }
 
