@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
-function Login() {
+function Login({isLoggedIn, setIsLoggedIn}) {
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
@@ -16,11 +16,12 @@ function Login() {
             password: event.target.password.value
         })
 		.then((response) => {
+            console.log(response.data);
 			sessionStorage.setItem('token', response.data.token)
+            setIsLoggedIn(true)
 			navigate('/')
 		})
-        .catch(setError(error))
-        
+        .catch((response) => {setError(response.response.data)})
     };
 
     return (
@@ -34,12 +35,12 @@ function Login() {
                 <button className="login__button">
                     Log in
                 </button>
-
                 {error && <div className="login__message">{error}</div>}
-            </form>
-            <p className='login__p'>
+                <p className='login__p'>
                 Need an account? <Link to="/signup">Register</Link>
             </p>
+            </form>
+
         </main>
     );
 }

@@ -5,15 +5,16 @@
     align-items: center;
     padding: 1rem;
     p {
-        color: white;
+        color: var(--white);
         font-size: 1.5rem;
+        padding-top: 2rem;
     }
 }
 
 .signup {
     display: flex;
     flex-direction: column;
-    width: 22rem;
+    width: 30vw;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     border-radius: 0.5rem;

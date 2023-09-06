@@ -1,12 +1,15 @@
 import './Header.scss'
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react'
 import logoImgLight from '../../assets/images/logo-light.svg'
 import logoImgDark from '../../assets/images/logo-dark.svg'
+import axios from 'axios';
 
-function Header() {
+function Header(isLoggedIn) {
    let logoImg;
    let darkMode = getCookie('dark-mode');
-
+   let bearerToken = sessionStorage.getItem("token");
+   const [userInfo, setUserInfo] = useState()
 
    function getCookie(cname) {
       let name = cname + "=";
@@ -24,6 +27,36 @@ function Header() {
       return "disabled";
    }
 
+   function logOut() {
+      sessionStorage.removeItem('token');
+      window.location.reload(false);
+   }
+
+   useEffect(() => {
+      if (isLoggedIn) {
+         const url = `https://database-backend-brainstation-70fdd396b787.herokuapp.com/api/users/current`;
+         const config = {
+            headers: {
+               Authorization: 'Bearer ' + bearerToken
+            }
+         };
+         axios
+            .get(url, config)
+            .then((response) => {
+               setUserInfo({
+                  userId: response.data.id,
+                  firstName: response.data.first_name,
+                  lastName: response.data.last_name,
+                  email: response.data.email,
+               })
+            })
+            .catch((error) => {
+               console.log("error calling axios", error);
+            });
+      }
+   }, [isLoggedIn]);
+
+
 
    if (darkMode === 'enabled') {
       logoImg = logoImgDark;
@@ -31,6 +64,38 @@ function Header() {
    else {
       logoImg = logoImgLight;
    }
+
+   function getProfileName() {
+      if (userInfo) {
+         return (<h3 className="name">{userInfo.firstName + ' ' + userInfo.lastName}</h3>)
+      }
+      else {
+         return (<h3 className="name">Guest User</h3>)
+      }
+   }
+
+   function getProfileEmail() {
+      if (userInfo) {
+         return (<p className="role">{userInfo.email}</p>)
+      }
+      else {
+         return (<p className="role">Guest</p>)
+      }
+   }
+
+   function signedIn() {
+      if (userInfo) {
+         return (<button className="option-btn" onClick={logOut}>Log out</button>)
+      }
+      else {
+         return (
+            <>
+               <Link to="/login" className="option-btn">login</Link>
+               {/* <Link to="/signup" className="option-btn">Register</Link> */}
+            </>)
+      }
+   }
+
    return (
       <>
          <header className="header">
@@ -53,12 +118,11 @@ function Header() {
 
                <div className="profile">
                   <i className="fa-solid fa-circle-user guest-icon"></i>
-                  <h3 className="name">Guest User</h3>
-                  <p className="role">Guest</p>
+                  {getProfileName()}
+                  {getProfileEmail()}
                   <Link to='/' className="btn">view profile</Link>
                   <div className="flex-btn">
-                     <Link to="/login" className="option-btn">login</Link>
-                     <Link to="/signup" className="option-btn">Register</Link>
+                     {signedIn()}
                   </div>
                </div>
 
@@ -74,9 +138,9 @@ function Header() {
 
             <div className="profile">
                <i className="fa-solid fa-circle-user guest-icon"></i>
-               <h3 className="name">Guest User</h3>
-               <p className="role">Guest</p>
-               <Link to='/login' className="btn">sign in</Link>
+               {getProfileName()}
+               {getProfileEmail()}
+               {signedIn()}
             </div>
 
             <nav className="navbar">
