@@ -108,10 +108,10 @@ function Header(isLoggedIn) {
 
                <Link to='/'><img className="logo" src={logoImg} alt="" /></Link>
 
-               {/* <form action="search.html" method="post" className="search-form">
+               <form action="search.html" method="post" className="search-form">
                   <input type="text" name="search_box" required placeholder="search courses..." maxLength="100" />
                   <button type="submit" className="fas fa-search"></button>
-               </form> */}
+               </form>
 
                <div className="icons">
                   <div id="menu-btn" className="fas fa-bars"></div>
