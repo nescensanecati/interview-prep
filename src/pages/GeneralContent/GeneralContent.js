@@ -29,7 +29,7 @@ function GeneralContent() {
                             <ul className='general-content__ul'>
                                 {pageResources.map((item, index) => {
                                     return (
-                                        <li key={index} className='general-content__li'><a href={Object.values(item)}>{Object.keys(item)}</a></li>
+                                        <li key={index} className='general-content__li'><a href={Object.values(item)} rel="noopener noreferrer" target="_blank">{Object.keys(item)}</a></li>
 
                                     )
                                 })}

@@ -75,7 +75,7 @@ function Preparation() {
                             <span>Coding Exercises</span>
                         </div>
                         <p className="title">Neetcode is a coding interview prep platform with tons of courses to help both beginners and experienced developers learn the coding skills they need to pass technical coding interviews. The platform focuses on coding problems that have the highest chances of coming up in real-life coding job interviews.</p>
-                        <Link to="https://neetcode.io/" className="inline-btn">Take me there</Link>
+                        <Link target="_blank" to="https://neetcode.io/" className="inline-btn">Take me there</Link>
                     </div>
 
                     <div className="box">
@@ -87,7 +87,7 @@ function Preparation() {
                             <span>Coding Exercises</span>
                         </div>
                         <p className="title">LeetCode has gained popularity due to its extensive problem library, user-friendly interface, and its role in helping individuals improve their coding and problem-solving skills. It is a valuable resource for both beginners looking to learn programming and experienced professionals aiming to enhance their technical abilities and job prospects.</p>
-                        <Link to="https://leetcode.com/" className="inline-btn">Take me there</Link>
+                        <Link target="_blank" to="https://leetcode.com/" className="inline-btn">Take me there</Link>
                     </div>
 
                     <div className="box">
@@ -99,7 +99,7 @@ function Preparation() {
                             <span>Coding Exercises</span>
                         </div>
                         <p className="title">HackerRank is widely used by programmers, software engineers, data scientists, and other professionals to enhance their technical skills and demonstrate their expertise to potential employers. It is a versatile platform that offers a variety of resources for individuals at different skill levels, from beginners to experienced coders.</p>
-                        <Link to='https://hackerrank.com/' className="inline-btn">Take me there</Link>
+                        <Link target="_blank" to='https://hackerrank.com/' className="inline-btn">Take me there</Link>
                     </div>
 
                     <div className="box">
@@ -111,7 +111,7 @@ function Preparation() {
                             <span>Coding Exercises</span>
                         </div>
                         <p className="title">CodeWars is known for its engaging and competitive environment, making it an enjoyable platform for programmers of all skill levels to practice and enhance their coding abilities. It's particularly popular among developers who enjoy solving coding puzzles and challenges in a structured and gamified manner.</p>
-                        <Link to="https://www.codewars.com/" className="inline-btn">Take me there</Link>
+                        <Link target="_blank" to="https://www.codewars.com/" className="inline-btn">Take me there</Link>
                     </div>
                     <div className="box">
                         <div className="tutor">
@@ -122,7 +122,7 @@ function Preparation() {
                             <span>Coding Exercises</span>
                         </div>
                         <p className="title">With Interview Warmup, your answers are transcribed in real time so you can review what you said. You'll also see insights: patterns detected by machine learning that can help you discover things about your answers, like the job-related terms you use and the words you say most often.</p>
-                        <Link to="https://grow.google/certificates/interview-warmup/" className="inline-btn">Take me there</Link>
+                        <Link target="_blank" to="https://grow.google/certificates/interview-warmup/" className="inline-btn">Take me there</Link>
                     </div>
                     <div className="box">
                         <div className="tutor">
@@ -133,7 +133,7 @@ function Preparation() {
                             <span>Coding Exercises</span>
                         </div>
                         <p className="title">InterviewBit is popular among software engineering and tech job aspirants as it provides structured resources and practice material specifically tailored for technical interviews. It aims to help individuals build confidence, improve their problem-solving skills, and increase their success in technical interviews.</p>
-                        <Link to="https://www.interviewbit.com/" className="inline-btn">Take me there</Link>
+                        <Link target="_blank" to="https://www.interviewbit.com/" className="inline-btn">Take me there</Link>
                     </div>
                 </div>
             </section>

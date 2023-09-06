@@ -85,13 +85,17 @@ function Header(isLoggedIn) {
 
    function signedIn() {
       if (userInfo) {
-         return (<button className="option-btn" onClick={logOut}>Log out</button>)
+         return (
+            <>
+               {/* <Link to='/' className="btn">view profile</Link> */}
+               <button className="option-btn" onClick={logOut}>Log out</button>
+            </>
+         )
       }
       else {
          return (
             <>
                <Link to="/login" className="option-btn">login</Link>
-               {/* <Link to="/signup" className="option-btn">Register</Link> */}
             </>)
       }
    }
@@ -120,7 +124,6 @@ function Header(isLoggedIn) {
                   <i className="fa-solid fa-circle-user guest-icon"></i>
                   {getProfileName()}
                   {getProfileEmail()}
-                  <Link to='/' className="btn">view profile</Link>
                   <div className="flex-btn">
                      {signedIn()}
                   </div>
@@ -148,7 +151,7 @@ function Header(isLoggedIn) {
                <Link to='/preparation'><i className="fas fa-graduation-cap"></i><span>preparation</span></Link>
                <Link to='/about'><i className="fas fa-question"></i><span>about</span></Link>
                <Link to='/contact'><i className="fas fa-headset"></i><span>contact us</span></Link>
-               <Link to='https://www.alex-diaz.info'><i className="fa fa-user-tie"></i><span>Who am I?</span></Link>
+               <Link to='https://www.alex-diaz.info' target="_blank"><i className="fa fa-user-tie"></i><span>Who am I?</span></Link>
             </nav>
 
          </div>
