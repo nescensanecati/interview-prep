@@ -53,3 +53,15 @@
         margin-top: 2rem;
     }
 }
+
+
+@media (max-width: 768px) {
+    .signup {
+        width: 40%;
+    }
+  }
+  @media (max-width: 450px) {
+    .signup {
+        width: 70%;
+    }
+  }

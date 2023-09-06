@@ -14,7 +14,7 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: 40%;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border-radius: 0.5rem;
@@ -55,8 +55,20 @@
   }
 }
 
+
+@media (max-width: 768px) {
+  .login-page {
+    margin: 3rem;
+  }
+  .login {
+  width: 40%;
+  }
+}
 @media (max-width: 450px) {
   .login-page {
     margin: 3rem;
+  }
+  .login {
+  width: 70%;
   }
 }
