@@ -57,15 +57,15 @@ function Functions() {
 
         document.querySelector('#user-btn').onclick = () => {
             profile.classList.toggle('active');
-            search.classList.remove('active');
+            // search.classList.remove('active');
         }
 
-        let search = document.querySelector('.header .flex .search-form');
+        // let search = document.querySelector('.header .flex .search-form');
 
-        document.querySelector('#search-btn').onclick = () => {
-            search.classList.toggle('active');
-            profile.classList.remove('active');
-        }
+        // document.querySelector('#search-btn').onclick = () => {
+        //     search.classList.toggle('active');
+        //     profile.classList.remove('active');
+        // }
 
         let sideBar = document.querySelector('.side-bar');
 
@@ -83,7 +83,7 @@ function Functions() {
 
         window.onscroll = () => {
             profile.classList.remove('active');
-            search.classList.remove('active');
+            // search.classList.remove('active');
 
             if (window.innerWidth < 1280) {
                 sideBar.classList.remove('active');
@@ -112,10 +112,10 @@ function Functions() {
                 sideBar.classList.remove('active');
             }
             if (
-                (event.target !== document.querySelector('#search-btn')) &&
-                (search.classList.contains('active'))
+                (event.target !== document.querySelector('#search-btn')) 
+                // && (search.classList.contains('active'))
             ) {
-                search.classList.remove('active');
+                // search.classList.remove('active');
             }
         }
      }, []);
