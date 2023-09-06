@@ -69,13 +69,15 @@ function Functions() {
         let sideBar = document.querySelector('.side-bar');
 
         document.querySelector('#menu-btn').onclick = () => {
+            if (window.innerWidth < 1280){
             sideBar.classList.toggle('active');
-            body.classList.toggle('active');
+            body.classList.toggle('active');}
         }
 
         document.querySelector('#close-btn').onclick = () => {
+            if (window.innerWidth < 1280){
             sideBar.classList.remove('active');
-            body.classList.remove('active');
+            body.classList.remove('active');}
         }
 
         window.onscroll = () => {
@@ -97,13 +99,14 @@ function Functions() {
             }
             if (
                 (event.target !== document.querySelector('#menu-btn')) &&
-                (sideBar.classList.contains('active'))
+                (sideBar.classList.contains('active')) 
             ) {
                 sideBar.classList.remove('active');
             }
             if (
                 (event.target !== document.querySelector('#menu-btn')) &&
-                (sideBar.classList.contains('active'))
+                (sideBar.classList.contains('active')) &&
+                (window.innerWidth < 1280)
             ) {
                 sideBar.classList.remove('active');
             }
