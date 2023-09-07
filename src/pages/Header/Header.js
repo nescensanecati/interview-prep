@@ -152,6 +152,8 @@ function Header(isLoggedIn) {
                <Link to='/about'><i className="fas fa-question"></i><span>about</span></Link>
                <Link to='/contact'><i className="fas fa-headset"></i><span>contact us</span></Link>
                <Link to='https://www.alex-diaz.info' target="_blank"><i className="fa fa-user-tie"></i><span>Who am I?</span></Link>
+               <Link to='https://www.canva.com/design/DAFtxKVE03E/PoCYYWhM5POlDPPru6w9Jw/edit?utm_content=DAFtxKVE03E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton' target="_blank"><i className="fa-solid fa-photo-film"></i><span>Slide deck</span></Link>
+               
             </nav>
 
          </div>
